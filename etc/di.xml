@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MB "Vienas bitas" (Magetrend.com)
+ *
+ * @category MageTrend
+ * @package  Magetend/PdfTemplates
+ * @author   Edvstu <edwin@magetrend.com>
+ * @license  http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link     https://www.magetrend.com/magento-2-pdf-invoice-pro
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Cart2Quote\Quotation\Model\Quote\Pdf\Quote">
+        <plugin name="owerride-pdf" type="Magetrend\PdfCart2Quote\Plugin\Pdf" sortOrder="1" disabled="false" />
+    </type>
+</config>

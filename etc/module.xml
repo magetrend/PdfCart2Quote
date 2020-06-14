@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * MB "Vienas bitas" (Magetrend.com)
+ *
+ * @category MageTrend
+ * @package  Magetend/PdfTemplates
+ * @author   Edvstu <edwin@magetrend.com>
+ * @license  http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link     https://www.magetrend.com/magento-2-pdf-invoice-pro
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Magetrend_PdfCart2Quote" schema_version="2.0.0" setup_version="2.0.0">
+        <sequence>
+            <module name="Magetrend_PdfTemplates"/>
+            <module name="Cart2Quote_Quotation"/>
+        </sequence>
+    </module>
+</config>

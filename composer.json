@@ -1,0 +1,14 @@
+{
+    "name": "magetrend/pdf-cart-2-quote",
+    "autoload": {
+        "psr-4": {"Magetrend\\PdfCart2Quote\\":""},
+        "files": ["registration.php"]
+    },
+    "description": "Cart2Quote compatibility",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "support": {
+        "email": "info@magetrend.com",
+        "author": "Edvinas Stulpinas"
+    }
+}
