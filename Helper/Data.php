@@ -24,6 +24,12 @@ class Data
 
     const XML_PATH_PDF_NAME_MULTIPLE_PATH = 'pdftemplates/cart2quote/name_quote_collection';
 
+
+    /**
+     * @var \Magento\Framework\Module\Dir\Reader
+     */
+    public $moduleReader;
+
     /**
      * @var \Magento\Framework\App\Config\ScopeConfigInterface
      */
@@ -41,10 +47,12 @@ class Data
      */
     public function __construct(
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        \Magetrend\PdfTemplates\Helper\Data $moduleHelper
+        \Magetrend\PdfTemplates\Helper\Data $moduleHelper,
+        \Magento\Framework\Module\Dir\Reader $moduleReader
     ) {
         $this->scopeConfig = $scopeConfig;
         $this->moduleHelper = $moduleHelper;
+        $this->moduleReader = $moduleReader;
     }
 
     /**
@@ -93,5 +101,13 @@ class Data
         }
 
         return __($fileName, $vars);
+    }
+
+    public function getModuleViewDirectory($path = '')
+    {
+        return rtrim($this->moduleReader->getModuleDir(
+                \Magento\Framework\Module\Dir::MODULE_VIEW_DIR,
+                'Magetrend_PdfCart2Quote'
+            ), '/').'/'.trim($path, '/').'/';
     }
 }

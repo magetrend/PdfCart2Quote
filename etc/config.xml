@@ -20,6 +20,40 @@
                 <name_quote>quotation_%id.pdf</name_quote>
                 <name_quote_collection>quotation_%date.pdf</name_quote_collection>
             </cart2quote>
+            <items>
+                <columns>
+                    <product>
+                        <is_active>
+                            <cart2quote>1</cart2quote>
+                        </is_active>
+                    </product>
+                    <sku>
+                        <is_active>
+                            <cart2quote>1</cart2quote>
+                        </is_active>
+                    </sku>
+                    <price>
+                        <is_active>
+                            <cart2quote>1</cart2quote>
+                        </is_active>
+                    </price>
+                    <qty>
+                        <is_active>
+                            <cart2quote>1</cart2quote>
+                        </is_active>
+                    </qty>
+                    <tax>
+                        <is_active>
+                            <cart2quote>1</cart2quote>
+                        </is_active>
+                    </tax>
+                    <subtotal>
+                        <is_active>
+                            <cart2quote>1</cart2quote>
+                        </is_active>
+                    </subtotal>
+                </columns>
+            </items>
         </pdftemplates>
     </default>
 </config>

@@ -14,4 +14,12 @@
     <type name="Cart2Quote\Quotation\Model\Quote\Pdf\Quote">
         <plugin name="owerride-pdf" type="Magetrend\PdfCart2Quote\Plugin\Pdf" sortOrder="1" disabled="false" />
     </type>
+
+    <type name="Magetrend\PdfTemplates\Block\Adminhtml\Template">
+        <plugin name="add-new-pdf-type" type="Magetrend\PdfCart2Quote\Plugin\Block\Adminhtml\Template" sortOrder="1" disabled="false" />
+    </type>
+
+    <type name="Magetrend\PdfTemplates\Model\TypeManager">
+        <plugin name="add-new-pdf-type-adapter" type="Magetrend\PdfCart2Quote\Plugin\Model\TypeManager" sortOrder="1" disabled="false" />
+    </type>
 </config>
