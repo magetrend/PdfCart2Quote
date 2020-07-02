@@ -13,9 +13,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
     <default>
         <pdftemplates>
-            <quote>
-                <is_active>1</is_active>
-            </quote>
             <cart2quote>
                 <name_quote>quotation_%id.pdf</name_quote>
                 <name_quote_collection>quotation_%date.pdf</name_quote_collection>
