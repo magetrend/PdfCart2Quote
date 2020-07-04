@@ -24,7 +24,7 @@
             <group id="cart2quote" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Cart2Quote Settings</label>
                 <field id="template" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <source_model>Magetrend\PdfTemplates\Model\Config\Source\Template\Quote</source_model>
+                    <source_model>Magetrend\PdfCart2Quote\Model\Config\Source\Template\Cart2Quote</source_model>
                     <label>PDF Template</label>
                 </field>
 
