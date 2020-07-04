@@ -3,7 +3,7 @@
  * MB "Vienas bitas" (Magetrend.com)
  *
  * @category MageTrend
- * @package  Magetend/PdfTemplates
+ * @package  Magetend/PdfCart2Quote
  * @author   Edvstu <edwin@magetrend.com>
  * @license  http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * @link     https://www.magetrend.com/magento-2-pdf-invoice-pro
@@ -23,7 +23,6 @@ class Data
     const XML_PATH_PDF_NAME_SINGLE_PATH = 'pdftemplates/cart2quote/name_quote';
 
     const XML_PATH_PDF_NAME_MULTIPLE_PATH = 'pdftemplates/cart2quote/name_quote_collection';
-
 
     /**
      * @var \Magento\Framework\Module\Dir\Reader
@@ -100,5 +99,4 @@ class Data
 
         return __($fileName, $vars);
     }
-
 }
