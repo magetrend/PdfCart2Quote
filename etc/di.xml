@@ -22,4 +22,16 @@
     <type name="Magetrend\PdfTemplates\Model\TypeManager">
         <plugin name="add-new-pdf-type-adapter" type="Magetrend\PdfCart2Quote\Plugin\Model\TypeManager" sortOrder="1" disabled="false" />
     </type>
+
+    <type name="Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Price">
+        <plugin name="add-tier-price" type="Magetrend\PdfCart2Quote\Plugin\Model\Pdf\Element\Items\Column\Renderer\Price" sortOrder="1" disabled="false" />
+    </type>
+
+    <type name="Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Qty">
+        <plugin name="add-tier-qty" type="Magetrend\PdfCart2Quote\Plugin\Model\Pdf\Element\Items\Column\Renderer\Qty" sortOrder="1" disabled="false" />
+    </type>
+
+    <type name="Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Subtotal">
+        <plugin name="add-tier-subtotal" type="Magetrend\PdfCart2Quote\Plugin\Model\Pdf\Element\Items\Column\Renderer\Subtotal" sortOrder="1" disabled="false" />
+    </type>
 </config>
