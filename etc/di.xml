@@ -34,4 +34,8 @@
     <type name="Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Subtotal">
         <plugin name="add-tier-subtotal" type="Magetrend\PdfCart2Quote\Plugin\Model\Pdf\Element\Items\Column\Renderer\Subtotal" sortOrder="1" disabled="false" />
     </type>
+
+    <type name="Magetrend\PdfTemplates\Model\Pdf\Element\Total">
+        <plugin name="override-totals-data" type="Magetrend\PdfCart2Quote\Plugin\Model\Pdf\Element\Total" sortOrder="1" disabled="false" />
+    </type>
 </config>
