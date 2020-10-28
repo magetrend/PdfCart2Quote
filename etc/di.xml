@@ -23,6 +23,10 @@
         <plugin name="add-new-pdf-type-adapter" type="Magetrend\PdfCart2Quote\Plugin\Model\TypeManager" sortOrder="1" disabled="false" />
     </type>
 
+    <type name="Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\ProductName">
+        <plugin name="add-item-remarks" type="Magetrend\PdfCart2Quote\Plugin\Model\Pdf\Element\Items\Column\Renderer\ProductName" sortOrder="1" disabled="false" />
+    </type>
+
     <type name="Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\Renderer\Price">
         <plugin name="add-tier-price" type="Magetrend\PdfCart2Quote\Plugin\Model\Pdf\Element\Items\Column\Renderer\Price" sortOrder="1" disabled="false" />
     </type>

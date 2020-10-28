@@ -16,16 +16,23 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
     private $quoteFactory;
 
     /**
+     * @var \Magento\User\Model\UserFactory
+     */
+    public $userFactory;
+
+    /**
      * Vars constructor.
      * @param \Cart2Quote\Quotation\Model\QuoteFactory $quoteFactory
      * @param \Magento\CurrencySymbol\Model\System\Currencysymbol $currencySymbol
      */
     public function __construct(
         \Cart2Quote\Quotation\Model\QuoteFactory $quoteFactory,
-        \Magento\Framework\Locale\CurrencyInterface $localeCurrency
+        \Magento\Framework\Locale\CurrencyInterface $localeCurrency,
+        \Magento\User\Model\UserFactory $userFactory
     ) {
         $this->quoteFactory = $quoteFactory;
         $this->localeCurrency = $localeCurrency;
+        $this->userFactory = $userFactory;
     }
 
     /**
@@ -48,6 +55,17 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
             $observer->getVariableList()->setData('c2q_base_currency_code', $this->localeCurrency->getCurrency($quote['base_currency_code'])->getSymbol());
             $observer->getVariableList()->setData('c2q_store_currency_code', $this->localeCurrency->getCurrency($quote['base_currency_code'])->getSymbol());
             $observer->getVariableList()->setData('c2q_quote_currency_code', $this->localeCurrency->getCurrency($quote['base_currency_code'])->getSymbol());
+        }
+
+        $adminCreatorId = $quote['admin_creator_id'];
+        if (is_numeric($adminCreatorId)) {
+            $adminUser = $this->userFactory->create()
+                ->load($adminCreatorId);
+
+            if ($adminUser->getId()) {
+                $observer->getVariableList()
+                    ->setData('c2q_created_by', $adminUser->getFirstname().' '.$adminUser->getLastname());
+            }
         }
     }
 }

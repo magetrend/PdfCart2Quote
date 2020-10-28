@@ -34,6 +34,28 @@
                             <cart2quote>1</cart2quote>
                         </is_active>
                     </price>
+
+                    <qdiscount>
+                        <label>Discount</label>
+                        <renderer>Magetrend\PdfCart2Quote\Model\Pdf\Element\Items\Column\Renderer\Discount</renderer>
+                        <sort_order>23</sort_order>
+                        <default>
+                            <item_1>5%</item_1>
+                            <item_2>5%</item_2>
+                            <item_3>5%</item_3>
+                            <item_4>5%</item_4>
+                            <item_5>5%</item_5>
+                        </default>
+                        <is_active>
+                            <order>0</order>
+                            <invoice>0</invoice>
+                            <creditmemo>0</creditmemo>
+                            <shipment>0</shipment>
+                            <quote>1</quote>
+                            <cart2quote>1</cart2quote>
+                        </is_active>
+                    </qdiscount>
+
                     <qty>
                         <is_active>
                             <cart2quote>1</cart2quote>
