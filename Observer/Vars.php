@@ -58,6 +58,7 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
         }
 
         $adminCreatorId = $quote['admin_creator_id'];
+        $observer->getVariableList()->setData('c2q_created_by', '');
         if (is_numeric($adminCreatorId)) {
             $adminUser = $this->userFactory->create()
                 ->load($adminCreatorId);

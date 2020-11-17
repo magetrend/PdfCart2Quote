@@ -24,6 +24,7 @@ class Filter extends \Magetrend\PdfTemplates\Model\Pdf\Filter\Quote
             'grand_total' => $this->moduleHelper->formatPrice($currencyCode, $quote->getGrandTotal()),
         ];
 
+        $data['customer_note'] = '';
         if ($customerNote = $quote->getCustomerNote()) {
             $data['customer_note'] = $customerNote;
         }
