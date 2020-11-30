@@ -63,6 +63,8 @@ class Discount extends \Magetrend\PdfTemplates\Model\Pdf\Element\Items\Column\De
 
             if ($price == $customPrice) {
                 $rowValue .= '-';
+            } elseif ($price == 0) {
+                $rowValue .= '-';
             } else {
                 $discountValue = number_format(100 - ($customPrice * 100 / $price), 2).'%';
                 $rowValue .= ($discountValue.'{br}');
