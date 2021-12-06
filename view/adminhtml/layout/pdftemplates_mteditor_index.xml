@@ -15,7 +15,7 @@
         <block name="cart2quote_elements" class="Magento\Backend\Block\Template">
             <block name="quote.element_text" class="Magetrend\PdfTemplates\Block\Adminhtml\Mteditor\Element" template="Magetrend_PdfTemplates::mteditor/element/text.phtml"/>
             <block name="quote.element_items" class="Magetrend\PdfTemplates\Block\Adminhtml\Mteditor\Element\Items" template="Magetrend_PdfTemplates::mteditor/element/items.phtml"/>
-            <block name="quote.element_total" class="Magetrend\PdfTemplates\Block\Adminhtml\Mteditor\Element" template="Magetrend_PdfTemplates::mteditor/element/total.phtml"/>
+            <block name="quote.element_total"  class="Magetrend\PdfTemplates\Block\Adminhtml\Mteditor\Element\Total" template="Magetrend_PdfTemplates::mteditor/element/total.phtml"/>
             <block name="quote.element_image" class="Magetrend\PdfTemplates\Block\Adminhtml\Mteditor\Element" template="Magetrend_PdfTemplates::mteditor/element/image.phtml"/>
             <block name="quote.element_shape" class="Magetrend\PdfTemplates\Block\Adminhtml\Mteditor\Element" template="Magetrend_PdfTemplates::mteditor/element/shape.phtml"/>
             <block name="quote.element_barcode" class="Magetrend\PdfTemplates\Block\Adminhtml\Mteditor\Element" template="Magetrend_PdfTemplates::mteditor/element/barcode.phtml"/>

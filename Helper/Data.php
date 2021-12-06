@@ -94,6 +94,7 @@ class Data
             if ($type = 'single') {
                 $quote = end($quotes);
                 $vars['id'] = $quote->getId();
+                $vars['increment_id'] = $quote->getIncrementId();
             }
         }
 
