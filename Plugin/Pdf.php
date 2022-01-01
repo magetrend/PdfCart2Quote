@@ -44,6 +44,12 @@ class Pdf
     public $helper;
 
     /**
+     * @var \Cart2Quote\Quotation\Helper\Pdf\Download
+     *
+     */
+    public $downloadHelper;
+
+    /**
      * Invoice constructor.
      *
      * @param \Magetrend\PdfTemplates\Helper\Data $moduleHelper
@@ -55,7 +61,8 @@ class Pdf
         \Magetrend\PdfTemplates\Model\Template $pdfTemplate,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\Filesystem $filesystem,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        \Cart2Quote\Quotation\Helper\Pdf\Download $downloadHelper
     ) {
         $this->helper = $helper;
         $this->moduleHelper = $moduleHelper;
@@ -63,6 +70,7 @@ class Pdf
         $this->registry = $registry;
         $this->filesystem = $filesystem;
         $this->scopeConfig = $scopeConfig;
+        $this->downloadHelper = $downloadHelper;
     }
 
     /**
@@ -92,6 +100,7 @@ class Pdf
         $pdf = $this->pdfTemplate->getPdf($quotes, $templateId);
         $pdf->save($path);
 
+        $this->downloadHelper->setResource($path, \Magento\Downloadable\Helper\Download::LINK_TYPE_FILE);
         return $path;
     }
 

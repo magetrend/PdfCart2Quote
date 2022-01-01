@@ -6,7 +6,7 @@
     },
     "description": "Cart2Quote compatibility",
     "type": "magento2-module",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "support": {
         "email": "info@magetrend.com",
         "author": "Edwin"
