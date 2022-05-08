@@ -46,4 +46,12 @@
     <type name="Magetrend\PdfTemplates\Helper\Total">
         <plugin name="total-helper" type="Magetrend\PdfCart2Quote\Plugin\Helper\Total" sortOrder="1" disabled="false" />
     </type>
+
+    <type name="Magetrend\PdfTemplates\Model\Sales\Order\Pdf">
+        <plugin name="totals-data" type="Magetrend\PdfCart2Quote\Plugin\Model\Sales\Order\Pdf" sortOrder="1" disabled="false" />
+    </type>
+
+    <type name="Cart2Quote\Quotation\Model\Quote\Pdf\Total\Grandtotal">
+        <plugin name="totals-grand" type="Magetrend\PdfCart2Quote\Plugin\Model\Quote\Pdf\Total\Grandtotal" sortOrder="1" disabled="false" />
+    </type>
 </config>

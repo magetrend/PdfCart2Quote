@@ -13,6 +13,16 @@ namespace Magetrend\PdfCart2Quote\Plugin\Helper;
 
 class Total
 {
+    public function beforeGetOrderTotalData($subject, $attributes, $order, $source)
+    {
+        if ($source instanceof \Cart2Quote\Quotation\Model\Quote) {
+            $subject->disableFullTaxSummary = true;
+        }
+
+        return [$attributes, $order, $source];
+    }
+
+
     public function aroundGetTotalsConfig($subject, callable $parent, $store = null, $type = null, $sort = true)
     {
         $totals = $parent($store, $type, $sort);
@@ -21,6 +31,7 @@ class Total
             return $totals;
         }
 
+        /**
         $totals['original_subtotal_0'] = [
             'sort_order' => 5,
             'title' => 'Original Subtotal',
@@ -40,9 +51,17 @@ class Total
             'title' => 'Quote Profit',
             'source_field' => 'quote_profit_0',
             'dummy_value' => '$0.00'
-        ];
+        ];*/
 
         return $totals;
     }
 
+    public function beforeGetAvailableTotals($subject, $store = null, $type = null, $sort = true)
+    {
+        if ($type == \Magetrend\PdfCart2Quote\Model\TypeAdapter::PDF_TEMPLATE_TYPE) {
+            $subject->disableFullTaxSummary = true;
+        }
+
+        return [$store, $type, $sort];
+    }
 }
