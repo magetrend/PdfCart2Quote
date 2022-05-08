@@ -53,8 +53,8 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
             $observer->getVariableList()->setData('c2q_subtotal_with_discount', number_format($quote['subtotal_with_discount'], 2));
             $observer->getVariableList()->setData('c2q_base_subtotal_with_discount', number_format($quote['base_subtotal_with_discount'], 2));
             $observer->getVariableList()->setData('c2q_base_currency_code', $this->localeCurrency->getCurrency($quote['base_currency_code'])->getSymbol());
-            $observer->getVariableList()->setData('c2q_store_currency_code', $this->localeCurrency->getCurrency($quote['base_currency_code'])->getSymbol());
-            $observer->getVariableList()->setData('c2q_quote_currency_code', $this->localeCurrency->getCurrency($quote['base_currency_code'])->getSymbol());
+            $observer->getVariableList()->setData('c2q_store_currency_code', $this->localeCurrency->getCurrency($quote['store_currency_code'])->getSymbol());
+            $observer->getVariableList()->setData('c2q_quote_currency_code', $this->localeCurrency->getCurrency($quote['quote_currency_code'])->getSymbol());
         }
 
         $adminCreatorId = $quote['admin_creator_id'];
