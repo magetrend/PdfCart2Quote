@@ -11,8 +11,24 @@
 
 namespace Magetrend\PdfCart2Quote\Plugin\Helper;
 
+use Magetrend\PdfCart2Quote\Model\TypeAdapter;
+
 class Total
 {
+    public $registry;
+
+    public function __construct(
+        \Magetrend\PdfCart2Quote\Model\Registry $registry
+    ) {
+        $this->registry = $registry;
+    }
+
+    public function beforeGetQuoteTotalData($subject, $attributes, $quote)
+    {
+        $this->registry->isQuote = true;
+        return [$attributes, $quote];
+    }
+
     public function beforeGetOrderTotalData($subject, $attributes, $order, $source)
     {
         if ($source instanceof \Cart2Quote\Quotation\Model\Quote) {
@@ -60,6 +76,7 @@ class Total
     {
         if ($type == \Magetrend\PdfCart2Quote\Model\TypeAdapter::PDF_TEMPLATE_TYPE) {
             $subject->disableFullTaxSummary = true;
+            $this->registry->isQuote = true;
         }
 
         return [$store, $type, $sort];
