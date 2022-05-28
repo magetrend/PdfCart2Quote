@@ -9,17 +9,17 @@
  * @link     https://www.magetrend.com/magento-2-pdf-invoice-pro
  */
 
-namespace Magetrend\PdfCart2Quote\Model\Quote;
+namespace Magetrend\PdfCart2Quote\Plugin\Model\Quote\Pdf\Total;
 
-class Pdf extends \Cart2Quote\Quotation\Model\Quote\Pdf\Quote
+class Discount
 {
-   public function getTotalsList()
-   {
-       return $this->_getTotalsList();
-   }
+    public function afterGetTotalsForDisplay($subject, $result)
+    {
+        if (empty($result)) {
+            return $result;
+        }
 
-   public function getTotalConfig()
-   {
-       return $this->_pdfConfig->getTotals();
-   }
+        $result[0]['source_field'] = 'quote_discount_0';
+        return $result;
+    }
 }

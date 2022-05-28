@@ -47,10 +47,6 @@
         <plugin name="total-helper" type="Magetrend\PdfCart2Quote\Plugin\Helper\Total" sortOrder="1" disabled="false" />
     </type>
 
-    <type name="Magetrend\PdfTemplates\Helper\Data">
-        <plugin name="data-helper" type="Magetrend\PdfCart2Quote\Plugin\Helper\Data" sortOrder="1" disabled="false" />
-    </type>
-
     <type name="Magetrend\PdfTemplates\Model\Sales\Order\Pdf">
         <plugin name="totals-data" type="Magetrend\PdfCart2Quote\Plugin\Model\Sales\Order\Pdf" sortOrder="1" disabled="false" />
     </type>
@@ -58,7 +54,16 @@
     <type name="Cart2Quote\Quotation\Model\Quote\Pdf\Total\Grandtotal">
         <plugin name="totals-grand" type="Magetrend\PdfCart2Quote\Plugin\Model\Quote\Pdf\Total\Grandtotal" sortOrder="1" disabled="false" />
     </type>
-    <type name="Magetrend\PdfTemplates\Block\Adminhtml\System\Form\Field\SourceField">
-        <plugin name="source-field" type="Magetrend\PdfCart2Quote\Plugin\Block\Adminhtml\SourceField" sortOrder="1" disabled="false" />
+
+    <type name="Cart2Quote\Quotation\Model\Quote\Pdf\Total\Subtotal">
+        <plugin name="totals-subtotal" type="Magetrend\PdfCart2Quote\Plugin\Model\Quote\Pdf\Total\Subtotal" sortOrder="1" disabled="false" />
+    </type>
+
+    <type name="Cart2Quote\Quotation\Model\Quote\Pdf\Total\Discount">
+        <plugin name="totals-discount" type="Magetrend\PdfCart2Quote\Plugin\Model\Quote\Pdf\Total\Discount" sortOrder="1" disabled="false" />
+    </type>
+
+    <type name="Cart2Quote\Quotation\Model\Quote\Pdf\Total\QuoteAdjustment">
+        <plugin name="totals-quote-adjustment" type="Magetrend\PdfCart2Quote\Plugin\Model\Quote\Pdf\Total\QuoteAdjustment" sortOrder="1" disabled="false" />
     </type>
 </config>

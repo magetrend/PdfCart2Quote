@@ -43,7 +43,7 @@ class Price
             return $data;
         }
 
-        foreach ($tierPrices as $tier) {//print_r($tier);exit;
+        foreach ($tierPrices as $tier) {
             $data['text']['subtotal']['text'][] = $tier[0]['price'];
         }
 
