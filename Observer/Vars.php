@@ -21,6 +21,11 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
     public $userFactory;
 
     /**
+     * @var \Magetrend\PdfTemplates\Helper\Data
+     */
+    public $moduleHelper;
+
+    /**
      * Vars constructor.
      * @param \Cart2Quote\Quotation\Model\QuoteFactory $quoteFactory
      * @param \Magento\CurrencySymbol\Model\System\Currencysymbol $currencySymbol
@@ -28,11 +33,13 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
     public function __construct(
         \Cart2Quote\Quotation\Model\QuoteFactory $quoteFactory,
         \Magento\Framework\Locale\CurrencyInterface $localeCurrency,
-        \Magento\User\Model\UserFactory $userFactory
+        \Magento\User\Model\UserFactory $userFactory,
+        \Magetrend\PdfTemplates\Helper\Data $moduleHelper
     ) {
         $this->quoteFactory = $quoteFactory;
         $this->localeCurrency = $localeCurrency;
         $this->userFactory = $userFactory;
+        $this->moduleHelper = $moduleHelper;
     }
 
     /**
@@ -45,7 +52,7 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
         $quote = $this->quoteFactory->create()->load($quote->getQuoteId())->getData();
         if (!empty($quote['increment_id'])) {
             $observer->getVariableList()->setData('c2q_increment_id', $quote['increment_id']);
-            $observer->getVariableList()->setData('c2q_expiry_date', $quote['expiry_date']);
+            $observer->getVariableList()->setData('c2q_expiry_date', $this->moduleHelper->formatDate($quote['expiry_date'], $quote['store_id']));
             $observer->getVariableList()->setData('c2q_base_custom_price_total', number_format($quote['base_subtotal_with_discount'], 2));
             $observer->getVariableList()->setData('c2q_custom_price_total', number_format($quote['custom_price_total'], 2));
             $observer->getVariableList()->setData('c2q_subtotal', number_format($quote['subtotal'], 2));
