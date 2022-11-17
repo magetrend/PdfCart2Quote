@@ -29,13 +29,11 @@ class Total
         return [$attributes, $quote, $template];
     }
 
-    public function beforeGetOrderTotalData($subject, $attributes, $order, $source, $template)
+    public function beforeGetOrderTotalData($subject, $attributes, $order, $source, $template = null)
     {
         if ($source instanceof \Cart2Quote\Quotation\Model\Quote) {
             $subject->disableFullTaxSummary = true;
         }
-
-        return [$attributes, $order, $source, $template];
     }
 
     public function afterGetAvailableTotals($subject, $totals)
