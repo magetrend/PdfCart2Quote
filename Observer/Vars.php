@@ -25,6 +25,8 @@ class Vars implements \Magento\Framework\Event\ObserverInterface
      */
     public $moduleHelper;
 
+    public $localeCurrency;
+
     /**
      * Vars constructor.
      * @param \Cart2Quote\Quotation\Model\QuoteFactory $quoteFactory
